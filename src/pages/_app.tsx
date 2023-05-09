@@ -1,6 +1,15 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import ResponsiveAppBar from "@/components/Layout/Navbar";
+import "@/styles/globals.css";
+import { Container } from "@mui/material";
+import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <ResponsiveAppBar />
+      <Container className="main-container">
+        <Component {...pageProps} />
+      </Container>
+    </>
+  );
 }
